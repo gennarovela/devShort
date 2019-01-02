@@ -1,0 +1,22 @@
+# Headers
+
+# Only connect to this site and subdomains via HTTPS for the next two years
+# If your page have no https enabled, comment this line.
+Header set Strict-Transport-Security: "max-age=63072000; includeSubDomains"
+
+# Send only the domain as referrer
+Header set Referrer-Policy: "strict-origin"
+
+# Prevent browsers from incorrectly detecting non-scripts as scripts
+Header set X-Content-Type-Options: "nosniff"
+
+# Block site from being framed with X-Frame-Options
+Header set X-Frame-Options: "DENY"
+
+# Block pages from loading when they detect reflected XSS attacks
+Header set X-XSS-Protection: "1; mode=block"
+
+# Other
+
+# Disable directory indexing
+Options -Indexes
