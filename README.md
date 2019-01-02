@@ -2,7 +2,7 @@
 
 The devShort URL shortener is the perfect choice for web developers, admins and all professionals.
 
-What is a URL shortener? Visit our [wiki article](wiki/Installation) for more information.
+What is a URL shortener? Visit our [wiki article](https://github.com/flokX/devShort/wiki/What-is-URL-shortening%3F) for more information.
 
 
 ## 1-2-3 Main features
@@ -29,7 +29,7 @@ What is a URL shortener? Visit our [wiki article](wiki/Installation) for more in
 2. Insert a admin password in the `config.json`
 3. Run the `installer.php`
 
-That's it! If you want to know what devShort can do visit our [wiki](wiki).
+That's it! If you want to know what devShort can do visit our [wiki](https://github.com/flokX/devShort/wiki).
 
 
 ## License
