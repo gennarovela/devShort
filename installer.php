@@ -47,15 +47,6 @@ require valid-user";
     $success = true;
 }
 
-// Generator for page customization
-$links_string = "";
-if ($data["settings"]["custom_links"]) {
-    foreach ($data["settings"]["custom_links"] as $name => $url) {
-        $links_string = $links_string . "<a href=\"$url\" class=\"badge badge-secondary\">$name</a> ";
-    }
-    $links_string = substr($links_string, 0, -1);
-}
-
 ?>
 
 <!doctype html>
@@ -65,9 +56,9 @@ if ($data["settings"]["custom_links"]) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="robots" content="noindex, nofollow">
-    <meta name="author" content="<?php echo $data["settings"]["author"]; ?> and the devShort team">
-    <link rel="icon" href="<?php echo $data["settings"]["favicon"]; ?>">
-    <title>Installer | <?php echo $data["settings"]["name"]; ?></title>
+    <meta name="author" content="The devShort team">
+    <link rel="icon" href="assets/icon.png">
+    <title>Installer | devShort</title>
     <link href="assets/vendor/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link href="assets/main.min.css" rel="stylesheet">
 </head>
@@ -76,32 +67,26 @@ if ($data["settings"]["custom_links"]) {
 
     <main role="main" class="flex-shrink-0">
         <div class="container">
-            <nav class="mt-3" aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="<?php echo $data["settings"]["home_link"]; ?>">Home</a></li>
-                    <li class="breadcrumb-item"><?php echo $data["settings"]["name"]; ?></li>
-                    <li class="breadcrumb-item active" aria-current="page">Installer</li>
-                </ol>
-            </nav>
-            <?php
+            <h1 class="mt-5">Installer</h1>
+            <p class="lead"><?php
 
             if ($success) {
                 echo "<h1 class=\"mt-5\">Successful installed!</h1>
-<p class=\"lead\">Now you can start the link shortening. For more information visit the <a href=\"https://github.com/flokx/devShort/wiki\">devShort wiki</a>.</p>";
+<p class=\"lead\">Now you can start link shortening. For more information visit the <a href=\"https://github.com/flokx/devShort/wiki\">devShort wiki</a>. The statistic page is quickly accessible under <a href=\"secure\">secure/</a></p>";
             } else {
                 echo "<h1 class=\"mt-5\">Error while installing.</h1>
-<p class=\"lead\">Please configure the <i>config.json</i> as written in the <a href=\"https://github.com/flokx/devShort/wiki/Installation\">devShort wiki</a>.</p>";
+<p class=\"lead\">Please configure the <i>config.json</i> as shown in the <a href=\"https://github.com/flokx/devShort/wiki/Installation\">devShort wiki</a> and try again.</p>";
             }
 
-            ?>
+            ?></p>
         </div>
     </main>
 
     <footer class="footer mt-auto py-3">
         <div class="container">
             <div class="d-flex justify-content-between align-items-center">
-                <span class="text-muted">&copy; <?php echo date("Y") . " " . $data["settings"]["author"]; ?> and <a href="https://github.com/flokx/devShort">devShort</a></span>
-                <?php if ($links_string) { echo "<span class=\"text-muted\">$links_string</span>"; } ?>
+                <span class="text-muted">&copy; <?php echo date("Y") ?> <a href="https://github.com/flokx/devShort">devShort</a></span>
+                <span class="text-muted"><a href="https://github.com/flokX/devShort/wiki" class="badge badge-secondary">devShort wiki</a> <a href="https://github.com/flokX" class="badge badge-secondary">devShort author</a></span>
             </div>
         </div>
     </footer>
