@@ -72,7 +72,7 @@ require valid-user";
 
             if ($success) {
                 echo "<h1 class=\"mt-5\">Successful installed!</h1>
-<p class=\"lead\">Now you can start link shortening. For more information visit the <a href=\"https://github.com/flokx/devShort/wiki\">devShort wiki</a>. The statistic page is quickly accessible under <a href=\"secure\">secure/</a></p>";
+<p class=\"lead\">Now you can start link shortening. For more information visit the <a href=\"https://github.com/flokx/devShort/wiki\">devShort wiki</a>. The admin panel is quickly accessible under <a href=\"admin\">admin/</a></p>";
             } else {
                 echo "<h1 class=\"mt-5\">Error while installing.</h1>
 <p class=\"lead\">Please configure the <i>config.json</i> as shown in the <a href=\"https://github.com/flokx/devShort/wiki/Installation\">devShort wiki</a> and try again.</p>";
