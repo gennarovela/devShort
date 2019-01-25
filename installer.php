@@ -3,7 +3,7 @@
 // All relevant changes can be made in the data file. Please read the docs: https://github.com/flokX/devShort/wiki
 
 $success = false;
-$data_path = implode(DIRECTORY_SEPARATOR, array(__DIR__, "secure", "config.json"));
+$data_path = implode(DIRECTORY_SEPARATOR, array(__DIR__, "admin", "config.json"));
 $data = json_decode(file_get_contents($data_path), true);
 
 if ($data["installer"]["password"]) {
@@ -23,7 +23,7 @@ RewriteRule ^(.*)$ {$installation_path}redirect.php?short=$1 [R=301,L]";
     file_put_contents(__DIR__ . DIRECTORY_SEPARATOR . ".htaccess", $root_htaccess, FILE_APPEND);
 
     // Create the .htpasswd for the secure directory. If already a hashed password is there, copy it.
-    $htpasswd_path = implode(DIRECTORY_SEPARATOR, array(__DIR__, "secure", ".htpasswd"));
+    $htpasswd_path = implode(DIRECTORY_SEPARATOR, array(__DIR__, "admin", ".htpasswd"));
     $data_password = $data["installer"]["password"];
     if (password_get_info($data_password)["algo"] === 0) {
         $hash = password_hash($data_password, PASSWORD_DEFAULT);
@@ -38,7 +38,7 @@ AuthType Basic
 AuthName \"devShort admin area\"
 AuthUserFile $htpasswd_path
 require valid-user";
-    file_put_contents(implode(DIRECTORY_SEPARATOR, array(__DIR__, "secure", ".htaccess")), $secure_htaccess);
+    file_put_contents(implode(DIRECTORY_SEPARATOR, array(__DIR__, "admin", ".htaccess")), $secure_htaccess);
 
     // Change password entry to the hash and remove installer file.
     $data["installer"]["password"] = $hash;
