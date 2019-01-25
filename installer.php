@@ -72,10 +72,10 @@ require valid-user";
 
             if ($success) {
                 echo "<h1 class=\"mt-5\">Successful installed!</h1>
-<p class=\"lead\">Now you can start link shortening. For more information visit the <a href=\"https://github.com/flokx/devShort/wiki\">devShort wiki</a>. The statistic page is quickly accessible under <a href=\"secure\">secure/</a></p>";
+<p class=\"lead\">Now you can start link shortening. For more information visit the <a href=\"https://github.com/flokX/devShort/wiki\">devShort wiki</a>. The statistic page is quickly accessible under <a href=\"secure\">secure/</a></p>";
             } else {
                 echo "<h1 class=\"mt-5\">Error while installing.</h1>
-<p class=\"lead\">Please configure the <i>config.json</i> as shown in the <a href=\"https://github.com/flokx/devShort/wiki/Installation\">devShort wiki</a> and try again.</p>";
+<p class=\"lead\">Please configure the <i>config.json</i> as shown in the <a href=\"https://github.com/flokX/devShort/wiki/Installation,-Update,-Reinstallation#installation\">devShort wiki</a> and try again.</p>";
             }
 
             ?></p>
@@ -85,7 +85,7 @@ require valid-user";
     <footer class="footer mt-auto py-3">
         <div class="container">
             <div class="d-flex justify-content-between align-items-center">
-                <span class="text-muted">&copy; <?php echo date("Y") ?> <a href="https://github.com/flokx/devShort">devShort</a></span>
+                <span class="text-muted">&copy; <?php echo date("Y") ?> <a href="https://github.com/flokX/devShort">devShort</a></span>
                 <span class="text-muted"><a href="https://github.com/flokX/devShort/wiki" class="badge badge-secondary">devShort wiki</a> <a href="https://github.com/flokX" class="badge badge-secondary">devShort author</a></span>
             </div>
         </div>
