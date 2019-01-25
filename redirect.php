@@ -10,7 +10,7 @@ if ($short === "robots.txt") {
 	echo "User-agent: *\n";
 	echo "Disallow: /\n";
 	exit;
-} else if ($short === 'favicon.ico') {
+} else if ($short === "favicon.ico") {
     header("HTTP/1.1 404 Not Found");
     exit;
 }
@@ -19,12 +19,12 @@ if ($short === "robots.txt") {
 function count_access($base_path, $name) {
     $filename = $base_path . DIRECTORY_SEPARATOR . "stats.json";
     $stats = json_decode(file_get_contents($filename), true);
-    $stats[$name][date("Y-m-d")] += 1;
-    file_put_contents($filename, json_encode($stats));
+    $stats[$name][mktime(0, 0, 0)] += 1;
+    file_put_contents($filename, json_encode($stats, JSON_PRETTY_PRINT));
 }
 
-$base_path = implode(DIRECTORY_SEPARATOR, array(__DIR__, "secure"));
-$data = json_decode(file_get_contents($base_path . DIRECTORY_SEPARATOR . "configjson"), true);
+$base_path = implode(DIRECTORY_SEPARATOR, array(__DIR__, "admin"));
+$data = json_decode(file_get_contents($base_path . DIRECTORY_SEPARATOR . "config.json"), true);
 
 if (array_key_exists($short, $data["shortlinks"])) {
     header("Location: " . $data["shortlinks"][$short], $http_response_code=303);
