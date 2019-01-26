@@ -20,13 +20,13 @@ What is a URL shortener? Visit our [wiki article](https://github.com/flokX/devSh
 
 1. With devShort you will never again have problems regarding legal questions because we only track the number of requests the shortlinks gain.
 2. It's quite easy to install, upgrade and maintain because there are only 16 files with a size of 1,04 MB only to upload.
-3. The appearence of the public pages can be changed easily with the `config.json` file.
+3. The appearence of the public pages can be changed easily with the `admin/config.json` file.
 
 
 ## 1-2-3 Click installation
 
 1. Copy the files into the directory
-2. Insert a admin password in the `config.json`
+2. Insert a admin password in the `admin/config.json`
 3. Run the `installer.php`
 
 That's it! If you want to know what devShort can do visit our [wiki](https://github.com/flokX/devShort/wiki).
