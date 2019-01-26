@@ -67,25 +67,32 @@ require valid-user";
 
     <main role="main" class="flex-shrink-0">
         <div class="container">
-            <h1 class="mt-5">Installer</h1>
-            <p class="lead"><?php
+            <nav class="mt-3" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">devShort</li>
+                    <li class="breadcrumb-item active" aria-current="page">Installer</li>
+                </ol>
+            </nav>
+            <?php
 
             if ($success) {
                 echo "<h1 class=\"mt-5\">Successful installed!</h1>
-<p class=\"lead\">Now you can start link shortening. For more information visit the <a href=\"https://github.com/flokx/devShort/wiki\">devShort wiki</a>. The admin panel is quickly accessible under <a href=\"admin\">admin/</a></p>";
+<p class=\"lead\">Now you can start to shorten links. For more information visit the <a href=\"https://github.com/flokX/devShort/wiki\">devShort wiki</a>.</p>
+<a href=\"admin\" class=\"btn btn-primary btn-lg \" role=\"button\">Go to the admin panel</a>";
             } else {
                 echo "<h1 class=\"mt-5\">Error while installing.</h1>
-<p class=\"lead\">Please configure the <i>config.json</i> as shown in the <a href=\"https://github.com/flokx/devShort/wiki/Installation\">devShort wiki</a> and try again.</p>";
+<p class=\"lead\">Please configure the <i>config.json</i> as shown in the <a href=\"https://github.com/flokX/devShort/wiki/Installation,-Update,-Reinstallation#installation\">devShort wiki</a> and try again.</p>
+<p>We assume that you have not yet set an admin password.</p>";
             }
 
-            ?></p>
+            ?>
         </div>
     </main>
 
     <footer class="footer mt-auto py-3">
         <div class="container">
             <div class="d-flex justify-content-between align-items-center">
-                <span class="text-muted">&copy; <?php echo date("Y") ?> <a href="https://github.com/flokx/devShort">devShort</a></span>
+                <span class="text-muted">&copy; <?php echo date("Y") ?> <a href="https://github.com/flokX/devShort">devShort</a></span>
                 <span class="text-muted"><a href="https://github.com/flokX/devShort/wiki" class="badge badge-secondary">devShort wiki</a> <a href="https://github.com/flokX" class="badge badge-secondary">devShort author</a></span>
             </div>
         </div>
