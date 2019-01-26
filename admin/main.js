@@ -1,61 +1,28 @@
-// Function based on https://stackoverflow.com/questions/1484506/random-color-generator/1484514#1484514
-function getRandomColor() {
-    'use strict';
-    var letters = '0123456789ABCDEF';
-    var color = '#';
-    for (var i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
-}
-
-var ctx = document.getElementById('chart').getContext('2d');
+var currentDate = new Date();
+var startDate = new Date(new Date().setFullYear(currentDate.getFullYear() - 1));
 
 $.getJSON('stats.json', function (json) {
     'use strict';
-    var datasets = [];
-    $.each(json, function (key, value) {
-        var data = [];
-        var color = getRandomColor();
-        $.each(value, function (key, value) {
-            data.push({
-                x: key,
-                y: value
+    $.each(json, function (name, data) {
+        $('div#charts').append('<div class="card mb-3"><div class="card-body"><div id="heatmap-' + name + '" class="heatmap"></div></div><div class="card-footer text-center text-muted"><a id="export-' + name + '" href="#download" class="card-link">Download chart</a><a id="delete-' + name + '" href="#delete" class="card-link">Delete shortlink and dataset</a></div></div>');
+        let heatmap = new frappe.Chart('div#heatmap-' + name, {
+            type: 'heatmap',
+            title: 'Access statistics for ' + name,
+            data: {
+                dataPoints: data,
+                start: startDate,
+                end: currentDate
+            },
+            countLabel: 'Access(es)'
+        });
+        $('a#export-' + name).click(function () {
+            heatmap.export();
+        });
+        $('a#delete-' + name).click(function () {
+            $.post('index.php', {
+                delete: name
             });
+            location.reload();
         });
-        datasets.push({
-            label: key,
-            backgroundColor: color,
-            borderColor: color,
-            data: data,
-            fill: false
-        });
-    });
-    var chart = new Chart(ctx, {
-        type: 'line',
-        data: {
-            datasets: datasets
-        },
-        options: {
-            responsive: true,
-            scales: {
-                xAxes: [{
-                    type: 'time',
-                    scaleLabel: {
-                        display: true,
-                        labelString: 'Date'
-                    }
-                    }],
-                yAxes: [{
-                    ticks: {
-                        min: 0
-                    },
-                    scaleLabel: {
-                        display: true,
-                        labelString: 'Request number'
-                    }
-                    }]
-            }
-        }
     });
 });
