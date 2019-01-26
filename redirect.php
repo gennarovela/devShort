@@ -32,7 +32,7 @@ if (array_key_exists($short, $data["shortlinks"])) {
     exit;
 } else {
     header("HTTP/1.1 404 Not Found");
-    count_access($base_path, "404 request");
+    count_access($base_path, "404-request");
 
     // Generator for page customization
     $links_string = "";
@@ -79,7 +79,7 @@ if (array_key_exists($short, $data["shortlinks"])) {
     <footer class="footer mt-auto py-3">
         <div class="container">
             <div class="d-flex justify-content-between align-items-center">
-                <span class="text-muted">&copy; <?php echo date("Y") . " " . $data["settings"]["author"]; ?> and <a href="https://github.com/flokx/devShort">devShort</a></span>
+                <span class="text-muted">&copy; <?php echo date("Y") . " " . $data["settings"]["author"]; ?> and <a href="https://github.com/flokX/devShort">devShort</a></span>
                 <?php if ($links_string) { echo "<span class=\"text-muted\">$links_string</span>"; } ?>
             </div>
         </div>
