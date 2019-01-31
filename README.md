@@ -1,5 +1,7 @@
 # devShort
 
+[![GitHub - Release](https://img.shields.io/github/release/flokX/devShort.svg?style=flat-square)](https://github.com/flokX/devShort/releases) [![GitHub - License](https://img.shields.io/github/license/flokX/devShort.svg?style=flat-square)](https://github.com/flokX/devShort/blob/master/LICENSE)
+
 The devShort URL shortener is the perfect choice for web developers, admins and all professionals.
 
 What is a URL shortener? Visit our [wiki article](https://github.com/flokX/devShort/wiki/What-is-URL-shortening%3F) for more information.
@@ -13,6 +15,7 @@ What is a URL shortener? Visit our [wiki article](https://github.com/flokX/devSh
    * Integrated statistics viewer
 2. Widely configurably for your needs with one file only
 3. Privacy friendly
+   * Only the access count and date is tracked
    * The whole code is verifiable in minutes
 
 
