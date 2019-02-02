@@ -60,7 +60,7 @@ require valid-user";
     <link rel="icon" href="assets/icon.png">
     <title>Installer | devShort</title>
     <link href="assets/vendor/bootstrap/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/main.min.css" rel="stylesheet">
+    <link href="assets/main.css" rel="stylesheet">
 </head>
 
 <body class="d-flex flex-column h-100">

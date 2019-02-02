@@ -57,7 +57,7 @@ if (array_key_exists($short, $data["shortlinks"])) {
     <link rel="icon" href="<?php echo $data["settings"]["favicon"]; ?>">
     <title>404 | <?php echo $data["settings"]["name"]; ?></title>
     <link href="assets/vendor/bootstrap/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/main.min.css" rel="stylesheet">
+    <link href="assets/main.css" rel="stylesheet">
 </head>
 
 <body class="d-flex flex-column h-100">
