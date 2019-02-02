@@ -21,8 +21,8 @@ What is a URL shortener? Visit our [wiki article](https://github.com/flokX/devSh
 
 ## 1-2-3 Reasons to install
 
-1. With devShort you will never again have problems regarding legal questions because we only track the number of requests the shortlinks gain.
-2. It's quite easy to install, upgrade and maintain because there are only 16 files with a size of 1,04 MB only to upload.
+1. You know how many people are using your links, but you doesn't have to track much
+2. Quite easy to install, upgrade and maintain because there are only 13 files with a total size of 328 KB only to upload
 3. The appearence of the public pages can be changed easily with the `admin/config.json` file.
 
 
@@ -35,7 +35,7 @@ What is a URL shortener? Visit our [wiki article](https://github.com/flokX/devSh
 That's it! If you want to know what devShort can do visit our [wiki](https://github.com/flokX/devShort/wiki).
 
 
-## License
+## About
 
 Maintainer: [flokX](https://github.com/flokX)
 
