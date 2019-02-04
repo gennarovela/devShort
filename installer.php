@@ -3,10 +3,10 @@
 // All relevant changes can be made in the data file. Please read the docs: https://github.com/flokX/devShort/wiki
 
 $success = false;
-$data_path = implode(DIRECTORY_SEPARATOR, array(__DIR__, "admin", "config.json"));
-$data = json_decode(file_get_contents($data_path), true);
+$config_path = implode(DIRECTORY_SEPARATOR, array(__DIR__, "admin", "config.json"));
+$config_content = json_decode(file_get_contents($config_path), true);
 
-if ($data["installer"]["password"]) {
+if ($config_content["installer"]["password"]) {
 
     // Create root .htaccess with the rewrite rules
     $installation_path = rtrim($_SERVER["REQUEST_URI"], "installer.php");
@@ -24,13 +24,13 @@ RewriteRule ^(.*)$ {$installation_path}redirect.php?short=$1 [R=301,L]";
 
     // Create the .htpasswd for the secure directory. If already a hashed password is there, copy it.
     $htpasswd_path = implode(DIRECTORY_SEPARATOR, array(__DIR__, "admin", ".htpasswd"));
-    $data_password = $data["installer"]["password"];
-    if (password_get_info($data_password)["algo"] === 0) {
-        $hash = password_hash($data_password, PASSWORD_DEFAULT);
+    $admin_password = $config_content["installer"]["password"];
+    if (password_get_info($admin_password)["algo"] === 0) {
+        $hash = password_hash($admin_password, PASSWORD_DEFAULT);
     } else {
-        $hash = $data_password;  
+        $hash = $admin_password;  
     }
-    file_put_contents($htpasswd_path, $data["installer"]["username"] . ":" . $hash);
+    file_put_contents($htpasswd_path, $config_content["installer"]["username"] . ":" . $hash);
 
     // Create the .htaccess for the secure directory.
     $secure_htaccess = "# Authentication
@@ -41,8 +41,8 @@ require valid-user";
     file_put_contents(implode(DIRECTORY_SEPARATOR, array(__DIR__, "admin", ".htaccess")), $secure_htaccess);
 
     // Change password entry to the hash and remove installer file.
-    $data["installer"]["password"] = $hash;
-    file_put_contents($data_path, json_encode($data, JSON_PRETTY_PRINT));
+    $config_content["installer"]["password"] = $hash;
+    file_put_contents($config_path, json_encode($config_content, JSON_PRETTY_PRINT));
     unlink(__DIR__ . DIRECTORY_SEPARATOR . "installer.php");
     $success = true;
 
