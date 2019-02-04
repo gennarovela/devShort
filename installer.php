@@ -45,6 +45,7 @@ require valid-user";
     file_put_contents($data_path, json_encode($data, JSON_PRETTY_PRINT));
     unlink(__DIR__ . DIRECTORY_SEPARATOR . "installer.php");
     $success = true;
+
 }
 
 ?>
@@ -81,7 +82,7 @@ require valid-user";
 <a href=\"admin\" class=\"btn btn-primary btn-lg \" role=\"button\">Go to the admin panel</a>";
             } else {
                 echo "<h1 class=\"mt-5\">Error while installing.</h1>
-<p class=\"lead\">Please configure the <i>config.json</i> as shown in the <a href=\"https://github.com/flokX/devShort/wiki/Installation,-Update,-Reinstallation#installation\">devShort wiki</a> and try again.</p>
+<p class=\"lead\">Please configure the <i>config.json</i> as shown in the <a href=\"https://github.com/flokX/devShort/wiki/Installation#installation\">devShort wiki</a> and try again.</p>
 <p>We assume that you have not yet set an admin password.</p>";
             }
 
