@@ -2,12 +2,12 @@
 
 // All relevant changes can be made in the data file. Please read the docs: https://github.com/flokX/devShort/wiki
 
-$config_filename = __DIR__ . DIRECTORY_SEPARATOR . "config.json";
-$config_content = json_decode(file_get_contents($config_filename), true);
-$stats_filename = __DIR__ . DIRECTORY_SEPARATOR . "stats.json";
-$stats_content = json_decode(file_get_contents($stats_filename), true);
+$config_path = __DIR__ . DIRECTORY_SEPARATOR . "config.json";
+$config_content = json_decode(file_get_contents($config_path), true);
+$stats_path = __DIR__ . DIRECTORY_SEPARATOR . "stats.json";
+$stats_content = json_decode(file_get_contents($stats_path), true);
 
-// API functions to delte and add the shortlinks via the admin panel
+// API functions to delete and add the shortlinks via the admin panel
 if (isset($_GET["delete"]) || isset($_GET["add"])) {
     $name = htmlspecialchars($_POST["name"]);
     $link = htmlspecialchars($_POST["link"]);
@@ -20,8 +20,8 @@ if (isset($_GET["delete"]) || isset($_GET["add"])) {
         $stats_content[$name] = array();
     }
 
-    file_put_contents($config_filename, json_encode($config_content, JSON_PRETTY_PRINT));
-    file_put_contents($stats_filename, json_encode($stats_content, JSON_PRETTY_PRINT));
+    file_put_contents($config_path, json_encode($config_content, JSON_PRETTY_PRINT));
+    file_put_contents($stats_path, json_encode($stats_content, JSON_PRETTY_PRINT));
     echo "{\"status\": \"successful\"}";
     exit;
 }
@@ -41,8 +41,8 @@ foreach ($stats_content as $name => $stats) {
     }
 }
 if ($changed) {
-    file_put_contents($config_filename, json_encode($config_content, JSON_PRETTY_PRINT));
-    file_put_contents($stats_filename, json_encode($stats_content, JSON_PRETTY_PRINT));
+    file_put_contents($config_path, json_encode($config_content, JSON_PRETTY_PRINT));
+    file_put_contents($stats_path, json_encode($stats_content, JSON_PRETTY_PRINT));
 }
 
 // Generator for page customization
