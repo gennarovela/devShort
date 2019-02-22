@@ -31,6 +31,10 @@ if (array_key_exists($short, $config_content["shortlinks"])) {
     header("Location: " . $config_content["shortlinks"][$short], $http_response_code=303);
     count_access($base_path, $short);
     exit;
+} else if ($short === "") {
+    header("Location: index.php", $http_response_code=301);
+    count_access($base_path, "Index");
+    exit;
 } else {
     header("HTTP/1.1 404 Not Found");
     count_access($base_path, "404-request");
