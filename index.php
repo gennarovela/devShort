@@ -45,6 +45,7 @@ if ($config_content["settings"]["custom_links"]) {
             <div class="btn-group" role="group" aria-label="Next actions">
                 <a class="btn btn-secondary" href="<?php echo $config_content["settings"]["home_link"]; ?>" role="button">Go to home</a>
                 <a class="btn btn-secondary" href="https://github.com/flokX/devShort/wiki/What-is-URL-shortening%3F" role="button">Link shortener explanation</a>
+                <a class="btn btn-secondary" href="admin" role="button">Admin panel</a>
             </div>
         </div>
     </main>
