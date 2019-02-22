@@ -63,8 +63,8 @@ if ($config_content["settings"]["custom_links"]) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="robots" content="noindex, nofollow">
-    <meta name="author" content="<?php echo $config_content[" settings"]["author"]; ?> and the devShort team">
-    <link rel="icon" href="../<?php echo $config_content[" settings"]["favicon"]; ?>">
+    <meta name="author" content="<?php echo $config_content["settings"]["author"]; ?> and the devShort team">
+    <link rel="icon" href="../<?php echo $config_content["settings"]["favicon"]; ?>">
     <title>Admin panel | <?php echo $config_content["settings"]["name"]; ?></title>
     <link href="../assets/vendor/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link href="../assets/main.css" rel="stylesheet">
