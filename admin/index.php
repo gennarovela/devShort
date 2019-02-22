@@ -35,7 +35,7 @@ foreach ($config_content["shortlinks"] as $name => $url) {
     }
 }
 foreach ($stats_content as $name => $stats) {
-    if (!isset($config_content["shortlinks"][$name]) && $name !== "404-request") {
+    if (!isset($config_content["shortlinks"][$name]) && $name !== "404-request" && $name !== "Index") {
         unset($stats_content[$name]);
         $changed = true;
     }
@@ -95,7 +95,7 @@ if ($config_content["settings"]["custom_links"]) {
                 </div>
             </div>
             <div id="charts"></div>
-            <p class="text-center my-4">powered by <a href="https://github.com/flokX/devShort">devShort</a> v2.0.0 (Latest: <a href="https://github.com/flokX/devShort/releases"><img src="https://img.shields.io/github/release/flokX/devShort.svg?style=flat" alt="Latest release"></a>)</p>
+            <p class="text-center my-4">powered by <a href="https://github.com/flokX/devShort">devShort</a> v2.1.0 (Latest: <a href="https://github.com/flokX/devShort/releases"><img src="https://img.shields.io/github/release/flokX/devShort.svg" alt="Latest release"></a>)</p>
         </div>
     </main>
 
