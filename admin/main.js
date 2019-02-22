@@ -1,5 +1,8 @@
 var currentDate = new Date();
 var startDate = new Date(new Date().setFullYear(currentDate.getFullYear() - 1));
+$.ajaxSetup({
+    cache: false
+});
 
 $('button#add-shortlink').click(function (event) {
     event.preventDefault();
