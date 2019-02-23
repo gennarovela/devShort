@@ -79,7 +79,7 @@ if ($config_content["settings"]["custom_links"]) {
             <h4 class="mb-4 text-center">admin panel</h4>
             <div class="card mb-3">
                 <div class="card-body">
-                    <h5 class="card-title">Add shortlink <a id="refresh" href="#refresh" class="card-link">Refresh charts</a></h5>
+                    <h5 class="card-title">Add shortlink <small><a id="refresh" href="#refresh" class="card-link">Refresh charts</a></small></h5>
                     <form class="form-inline">
                         <label class="sr-only" for="name">Name</label>
                         <input type="text" class="form-control mb-2 mr-sm-2" id="name" placeholder="Link1" aria-describedby="name-help">
@@ -95,7 +95,7 @@ if ($config_content["settings"]["custom_links"]) {
                 </div>
             </div>
             <div id="charts"></div>
-            <p class="text-center my-4">powered by <a href="https://github.com/flokX/devShort">devShort</a> v2.1.0 (Latest: <a href="https://github.com/flokX/devShort/releases"><img src="https://img.shields.io/github/release/flokX/devShort.svg" alt="Latest release"></a>)</p>
+            <p class="text-center my-4">powered by <a href="https://github.com/flokX/devShort">devShort</a> v2.1.0 (Latest: <a href="https://github.com/flokX/devShort/releases"><img src="https://img.shields.io/github/release/flokX/devShort.svg" alt="Latest release"></a>, <a href="https://github.com/flokX/devShort/wiki/Installation#update-or-reinstallation">How to update</a>)</p>
         </div>
     </main>
 
