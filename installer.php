@@ -19,7 +19,7 @@ RewriteEngine On
 RewriteBase $installation_path
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ {$installation_path}redirect.php?short=$1 [R=301,L]";
+RewriteRule ^(.*)$ {$installation_path}redirect.php?short=$1 [L]";
     file_put_contents(__DIR__ . DIRECTORY_SEPARATOR . ".htaccess", $root_htaccess, FILE_APPEND);
 
     // Create the .htpasswd for the secure directory. If already a hashed password is there, copy it.
